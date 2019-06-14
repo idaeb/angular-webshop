@@ -7,7 +7,6 @@ describe('CartService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      // what to import here
     });
     service = TestBed.get(CartService);
     localStorage.setItem('cart', '[]');
