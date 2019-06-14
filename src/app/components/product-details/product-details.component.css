@@ -1,0 +1,43 @@
+.movie-title,
+.movie-type,
+.movie-price {
+  text-align: center;
+}
+
+.large-product-title {
+  margin-top: 0;
+}
+
+.fa-star {
+  color: #FFA500;
+}
+
+.movie-details-section {
+  margin-bottom: 3%;
+}
+
+.dark-button {
+  background-color: #383838;
+  color: white;
+}
+
+.dark-button:hover {
+  background-color: #525252;
+  border-color: #525252;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.number-reviews {
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+
+  .breadcrumbs {
+    text-align: left;
+  }
+
+}

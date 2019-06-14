@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.5rem 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #3F3F3F;
+  font-weight: 300;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #3F3F3F;
+}
+
+a:hover {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+i {
+  padding-right: 0.25rem;
+}
+
+.breadcrumbs {
+  font-size: 0.85rem;
+  padding-bottom: 1rem;
+}
+
+button {
+  width: 300px;
+  height: 42px;
+  border-color: #383838;
+  border-width: 2px;
+  margin-bottom: 3%;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.dark-button {
+  background-color: #383838;
+  color: white;
+}
+
+.light-button {
+  color: #3F3F3F;
+}
+
+.light-button:hover {
+  color: #7D7D7D;
+}
+
+.dark-button:hover {
+  background-color: #525252;
+  border-color: #525252;
+}
+
+.main-container {
+  padding: 5%;
+}
+
+.product-img {
+  margin-bottom: 1rem;
+}

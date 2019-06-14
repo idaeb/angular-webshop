@@ -1,0 +1,44 @@
+.logo {
+  text-align: center;
+}
+
+.hamburger {
+  text-align: center;
+}
+
+i {
+  display: inline-block;
+}
+
+input[type="text"] {
+  margin-right: 0.5rem;
+  height: 25px;
+  border: none;
+  border-radius: 0;
+  border-bottom: solid 1px lightgrey;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.search-icon {
+  margin-right: 0.5rem;
+}
+
+.cart-icon {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.bg-light {
+  background-color: none;
+}
+
+@media (min-width: 992px) {
+
+  .float-right {
+    float: right;
+  }
+
+}

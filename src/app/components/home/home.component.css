@@ -1,0 +1,9 @@
+.movie-title,
+.movie-type,
+.movie-price {
+  text-align: center;
+}
+
+.movie-poster {
+  margin-bottom: 5%;
+}

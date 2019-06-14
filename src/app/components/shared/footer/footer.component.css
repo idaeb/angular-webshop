@@ -1,0 +1,46 @@
+footer {
+  background-color: #98B6B6;
+  padding: 3%;
+  color: #FFFFFF;
+}
+
+.footer-link {
+  color: #FFFFFF;
+}
+
+.footer-link:hover {
+  color: #819B9B;
+}
+
+.contact-information,
+.footer-links {
+  margin-bottom: 5%;
+}
+
+.footer-links li {
+  margin-bottom: 3%;
+}
+
+.contact-us-title {
+  font-weight: 700;
+}
+
+.company-name {
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0 0 1rem 0;
+}
+
+.footer-heading {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.web-page {
+  margin-top: 3%;
+}
+
+.footer-copyright {
+  text-align: center;
+}

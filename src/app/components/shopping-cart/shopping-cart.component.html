@@ -1,0 +1,49 @@
+<main class="main-container">
+  <div class="row">
+    <app-sidebar class="d-none d-lg-block d-xl-block col-lg-3"></app-sidebar>
+    <section class="col-lg-9">
+      <div class="show-cart" *ngIf="cart.length > 0; else emptyCart">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of cart">
+            <th scope="row" class="name-movie">{{ item.product.name }}<br>
+              <p class="type-movie">DVD<br>
+                <a routerLink="/cart" class="action-remove" (click)="removeFromCart(item.product.id)">Remove</a>
+            </th>
+            <td>${{ item.product.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{item.product.price * item.quantity}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="cta-area">
+              <p>Subtotal: <span class="subtotal">SEK {{getTotalPrice()}}</span></p>
+              <div class="continue-shopping">
+                <button routerLink="/" class="light-button">Continue shopping</button>
+              </div>
+              <div class="proceed-checkout">
+                <button routerLink="/checkout" class="dark-button" routerLink="/checkout">Proceed to checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #emptyCart>
+        <div class="empty-cart">
+          <p>Your shopping cart is currently empty.</p>
+          <p>Browse movies <a routerLink="/">here</a></p>
+        </div>
+      </ng-template>
+    </section>
+  </div> <!-- end of row-->
+</main>

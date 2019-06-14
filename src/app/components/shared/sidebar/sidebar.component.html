@@ -1,0 +1,10 @@
+<aside class="categories">
+  <nav>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><a href="/">All movies</a></li>
+      <li id="category-{{category.id}}" *ngFor="let category of categories" class="list-group-item">
+        <a routerLink="/" (click)="filterProducts(category.id)">{{category.name}}</a>
+      </li>
+    </ul>
+  </nav>
+</aside>

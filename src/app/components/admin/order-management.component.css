@@ -1,0 +1,50 @@
+.table td,
+.table th {
+  border-top: none;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.order-row {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+}
+
+.orders-table {
+  margin: 2.5rem 0;
+}
+
+.order-id {
+  color: #52ACFF;
+}
+
+.cta-admin button {
+  float: right;
+  padding: 0;
+  margin: 1.5rem 0.25rem;
+  text-transform: none;
+  font-weight: 400;
+  width: 125px;
+  font-size: 0.85rem;
+}
+
+.green-button-sm {
+  background-color: #56BD5A;
+  border-color: #56BD5A;
+  color: #FFFFFF;
+}
+
+.cta-admin-mobile button {
+  padding: 0;
+  margin: 1rem 0;
+  margin-right: 0.5rem;
+  text-transform: none;
+  font-weight: 400;
+  width: 125px;
+  font-size: 0.85rem;
+}
+
+.grey-button-sm {
+  background-color: #E5E5E5;
+  border-color: #E5E5E5;
+  color: #383838;
+}

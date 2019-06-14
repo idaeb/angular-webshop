@@ -1,0 +1,66 @@
+<main class="main-container">
+  <div class="row">
+    <app-sidebar class=" d-none d-lg-block d-xl-block col-lg-3"></app-sidebar>
+    <section class="col-lg-9">
+      <div class="row">
+        <div class="breadcrumbs col-12">
+          <a routerLink="/">Home</a> > {{categories}} > {{product?.name}}
+        </div>
+        <div class="col-md-6">
+          <div class="product-img">
+            <img src="{{product?.imageUrl}}" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <h2 class="large-product-title">{{product?.name}} </h2>
+          </div>
+          <div>
+            <h3>SEK {{product?.price}}</h3>
+          </div>
+          <p>In stock</p>
+          <p>Shipped within 3-5 working days</p>
+          <div class="cta-area">
+            <div>
+              <button routerLink="/cart" class="light-button" (click)="addProductToCart(product)">Add to cart</button>
+            </div>
+            <div>
+              <button routerLink="/checkout" class="dark-button" (click)="addProductToCart(product)">Buy it now</button>
+            </div>
+          </div> <!-- end of cta area-->
+          <div class="ratings"><span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><p class="number-reviews">43 reviews</p></span>
+          </div>
+        </div> <!-- end of col-->
+        <section class="movie-details-section">
+          <div class="col-12">
+            <h2 class="large-title">Description</h2>
+            <p class="movie-description">{{product?.description}}</p>
+            <h2 class="large-title">Facts</h2>
+            <ul>
+              <li>Title: {{product?.name}}</li>
+              <li>Category: {{categories}}</li>
+              <li>Year: {{product?.year}}</li>
+            </ul>
+            <hr>
+            <div class="related-movies">
+              <h2 class="large-title related-movies-title">You might also like</h2>
+              <div class="row">
+                <div *ngFor="let relatedMovie of relatedMovies" class="col-sm-6 col-lg-4">
+                  <div class="product-img">
+                    <a routerLink="/products/{{relatedMovie.id}}">
+                      <img src="{{relatedMovie.imageUrl}}" class="img-fluid movie-poster" alt="Image of a movie poster">
+                    </a>
+                  </div>
+                  <a routerLink="/products/{{relatedMovie.id}}"><p class="movie-title">{{relatedMovie.name}}</p></a>
+                  <p class="movie-type">{{relatedMovie.type}}</p>
+                  <p class="movie-price">{{relatedMovie.price}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div> <!-- end of row-->
+    </section>
+  </div> <!-- end of row-->
+</main>

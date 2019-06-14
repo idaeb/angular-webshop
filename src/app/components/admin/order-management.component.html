@@ -1,0 +1,60 @@
+<main class="main-container">
+  <!-- Desktop version below-->
+  <section class="d-none d-md-block d-lg-block">
+    <div class="row">
+      <div class="col-lg-6">
+        <header>
+          <h2>Sales</h2>
+        </header>
+      </div>
+    </div>
+
+    <table class="table orders-table">
+      <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Created</th>
+        <th scope="col">Status</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let order of orders">
+        <th scope="row" class="order-id">{{order.id}}</th>
+        <td>{{order.created}}</td>
+        <td>{{getOrderStatus(order.status)}}</td>
+        <td>{{order.createdBy}}</td>
+        <td>{{order.totalPrice}}</td>
+        <td class="edit-order-icons">
+          <i class="fas fa-pen"></i>
+          <i class="fas fa-trash-alt" (click)="deleteOrder(order.id)"></i>
+          <i *ngIf="order.status === 0" class="fas fa-truck" (click)="shipOrder(order)"></i>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Tablet and mobile version below-->
+  <section class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+    <div class="row">
+      <div class="col-12">
+        <div class="order-row" *ngFor="let order of orders">
+          <ul>
+            <li>Order ID: {{order.id}}</li>
+            <li>Created: {{order.created}}</li>
+            <li>Status: {{getOrderStatus(order.status)}}</li>
+            <li>Contact: {{order.createdBy}}</li>
+            <li>Amount: {{order.totalPrice}}</li>
+            <div class="cta-admin-mobile">
+              <button *ngIf="order.status === 0" class="grey-button-sm" (click)="shipOrder(order)">Ship order</button>
+              <button class="grey-button-sm" (click)="deleteOrder(order.id)">Remove</button>
+            </div>
+          </ul>
+        </div> <!-- end of order row-->
+      </div>
+    </div>
+  </section>
+</main>

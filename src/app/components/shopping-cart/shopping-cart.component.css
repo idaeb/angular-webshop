@@ -1,0 +1,61 @@
+.dark-button {
+  background-color: #383838;
+  color: white;
+}
+
+.light-button {
+  color: #3F3F3F;
+}
+
+.light-button:hover {
+  color: #7D7D7D;
+}
+
+.dark-button:hover {
+  background-color: #525252;
+  border-color: #525252;
+}
+
+.action-remove {
+  color: #52ACFF;
+}
+
+.table td,
+.table th {
+  border-top: none;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table th {
+  font-weight: 400;
+}
+
+.table {
+  margin-bottom: 7%;
+}
+
+.empty-cart-message {
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+
+  .cta-area {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .cta-area {
+    float: right;
+  }
+
+  .subtotal {
+    float: right;
+  }
+
+  .empty-cart-message {
+    text-align: left;
+  }
+}

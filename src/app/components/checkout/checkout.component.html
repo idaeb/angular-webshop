@@ -1,0 +1,124 @@
+<main class="main-container">
+  <div class="row">
+    <app-sidebar class="d-none d-lg-block d-xl-block col-lg-3"></app-sidebar>
+    <section class="col-lg-9">
+      <div class="breadcrumbs">
+        <a routerLink="/">Home</a> > Checkout
+      </div>
+      <div class="shipping-information-title">
+        <h2 class="large-title">Shipping information</h2>
+      </div>
+      <form class="checkout-form" id="checkoutForm" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-6">
+            <input type="text" formControlName="firstName" class="form-control" id="inputName4"
+                   placeholder="First name" required>
+          </div>
+          <div class="form-group col-6">
+            <input type="text" formControlName="lastName" class="form-control" id="inputLastName"
+                   placeholder="Last name" required>
+          </div>
+        </div>
+
+        <div formGroupName="address"><!-- start of form group address-->
+          <div class="form-group">
+            <input type="text" formControlName="street" class="form-control" id="inputAddress" placeholder="Address"
+                   required>
+          </div>
+          <div class="form-group">
+            <input type="text" formControlName="street2" class="form-control" id="inputAddress2"
+                   placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-group">
+            <input type="text" formControlName="city" class="form-control" id="inputCity" placeholder="City" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <input type="text" formControlName="country" class="form-control" id="inputCountry"
+                     placeholder="Country/region" required>
+            </div>
+            <div class="form-group col-6">
+              <input type="text" formControlName="zip" class="form-control" id="inputZip" placeholder="Zip code"
+                     required>
+            </div>
+          </div>
+        </div><!-- end of form group address-->
+
+        <div class="form-group">
+          <input type="text" formControlName="email" class="form-control" id="inputEmail" placeholder="Email address"
+                 required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" formControlName="phone" class="form-control" id="inputPhone" placeholder="Phone number"
+                 required>
+        </div>
+
+      </form> <!--end of checkout form-->
+
+      <div class="payment-options">
+        <div class="payment-options-title">
+          <h2 class="large-title">Payment methods</h2>
+        </div>
+
+        <form [formGroup]="selectPaymentForm">
+          <div class="payment-logo">
+            <img src="../../../assets/images/iconfinder_Visa-Curved_70599.png" alt="Visa logo" class="img-fluid">
+          </div>
+          <input type="radio" formControlName="payment" value="visa">
+          <div class="payment-logo">
+            <img src="../../../assets/images/iconfinder_Mastercard-Curved_70593.png" alt="Mastercard logo"
+                 class="img-fluid">
+          </div>
+          <input type="radio" formControlName="payment" value="mastercard">
+          <div class="payment-logo">
+            <img src="../../../assets/images/iconfinder_Paypal-Curved_70607.png" alt="PayPal logo" class="img-fluid">
+          </div>
+          <input type="radio" formControlName="payment" value="paypal">
+          <div class="payment-logo">
+            <img src="../../../assets/images/iconfinder_American-Express-Curved_70583.png" alt="American Express logo"
+                 class="img-fluid">
+          </div>
+          <input type="radio" formControlName="payment" value="american">
+        </form>
+      </div> <!-- end of payment methods-->
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of cart">
+          <th scope="row" class="name-movie">{{ item.product.name }}<br>
+            <p class="type-movie">DVD<br>
+              <a routerLink="/cart" class="action-remove" (click)="removeFromCart(item.product.id)">Remove</a>
+          </th>
+          <td>SEK {{ item.product.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>SEK {{ item.product.price }}</td>
+        </tr>
+        </tbody>
+      </table> <!-- end of shopping cart-->
+
+      <div class="payment-overview">
+
+        <p class="checkout-price-overview">Subtotal<span>
+        <p class="subtotal">SEK {{getTotalPrice()}}</p></span></p>
+        <p class="checkout-price-overview">Shipping<span>
+        <p class="shipping">SEK 0</p></span></p>
+        <p class="checkout-price-overview checkout-total">Total<span>
+        <p class="total">SEK {{getTotalPrice()}}</p></span></p>
+        <div class="place-order-cta">
+          <button type="submit" class="place-order-button" form="checkoutForm">Place
+            order
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

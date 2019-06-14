@@ -1,0 +1,19 @@
+<main class="main-container">
+  <div class="row">
+    <app-sidebar class="d-none d-lg-block d-xl-block col-lg-3" (eventEmitter)="filterProducts($event)"></app-sidebar>
+    <section class="col-lg-9">
+      <div class="row product-list">
+        <div *ngFor="let product of products" class="col-sm-6 col-lg-4">
+          <div *ngIf="product.imageUrl">
+            <div class="product-img"><a routerLink="/products/{{product.id}}">
+              <img src="{{product.imageUrl}}" class="img-fluid" alt="An image of a movie poster"></a>
+            </div>
+            <a routerLink="/products/{{product.id}}"><p class="movie-title">{{product.name}}</p></a>
+            <p class="movie-type">DVD</p>
+            <p class="movie-price">SEK {{product.price}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> <!-- end of row-->
+</main>
